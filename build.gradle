@@ -1,0 +1,12 @@
+buildscript {
+    apply from: 'logging/logging.gradle'
+    apply from: 'projects/projects.gradle'  
+    
+}
+
+/* 
+throws TaskSelectionException {
+    println "TODO"
+}
+*/
+

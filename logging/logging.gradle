@@ -1,0 +1,32 @@
+/*
+    Can be used for understanding gradle:s build lifecycle:
+    https://docs.gradle.org/current/userguide/build_lifecycle.html
+ */
+
+gradle.addListener(new TaskExecutionListener() {
+    void beforeExecute(Task task) {
+        //println "beforeExecute of $task"
+    }
+    void afterExecute(Task task, TaskState state) {
+        //println "afterExecute of $task"
+    }
+
+    void buildFinished(BuildResult result) {
+        //println "buildFinished"
+    }
+    
+    void buildStarted(Gradle gradle) {
+        //println "buildStarted"
+    }
+    
+    void projectsEvaluated(Gradle gradle) {
+        //println "projectsEvaluated"
+    }
+    void projectsLoaded(Gradle gradle) {
+        //println "projectsLoaded"
+    }
+
+    void settingsEvaluated(Settings settings) {
+        //println "settingsEvaluated"
+    }
+})

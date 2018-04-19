@@ -1,0 +1,33 @@
+ext.projectPath = "projects/projects/"
+ext.files = new File(projectPath)
+
+if (files.isDirectory())
+{
+    files.eachFile {
+        tasks.create(name: "process_"+it.name) {
+            
+            group = "Process Project"
+            description 'Description' // TODO
+
+            String fileName = 'Filename' // TODO
+            String pathToFile = projectPath+fileName
+
+            doLast {
+                println "= Processing task ${name} ="
+                println "Based on file: ${pathToFile}"
+                println "= Processing task ${name} =".replaceAll(/./,"="); 
+                }
+            }
+    }
+}
+
+task processProjects {
+
+    dependsOn {
+        tasks.findAll { task -> task.name.startsWith('process_') }
+    }
+
+    doLast {
+        println ("All Project Processed");
+    }
+}
