@@ -1,7 +1,13 @@
 buildscript {
     apply from: 'logging/logging.gradle'
     apply from: 'projects/projects.gradle'  
-    
+    apply from: 'includes/support.gradle'
+}
+
+task HelloFromRootTask {
+    doLast {
+        println ("Hello: ${HelloFromRootTask.name}");
+    }
 }
 
 /* 

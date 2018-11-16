@@ -1,0 +1,7 @@
+task support {
+	dependsOn ':HelloFromRootTask'
+
+	doLast {
+		println ("Hello: ${support.name}")
+	}
+}
